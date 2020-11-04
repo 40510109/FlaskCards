@@ -7,8 +7,8 @@
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: #108d6f;
-    border-color: #108d6f;
+    background-color: #007b5e;
+    border-color: #000000;
     box-shadow: none;
     outline: none;
 }
@@ -24,7 +24,6 @@
     background-color: #ffffff;
     border-color: #007b5e;
 }
-
 
 section {
     padding: 60px 0;
@@ -129,12 +128,12 @@ section .section-subtitle {
 
 .backside .card a {
     font-size: 18px;
-    color: #007b5e !important;
+    color: #000000 !important;
 }
 
 .frontside .card .card-title,
 .backside .card .card-title {
-    color: #007b5e !important;
+    color: #000000 !important;
 }
 
 .frontside .card .card-body img {

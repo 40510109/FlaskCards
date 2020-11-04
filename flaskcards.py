@@ -9,6 +9,10 @@ def root():
 def language(langid, mode):
 	return render_template('lang.html', languageid=langid, gamemode=mode), 200
 
+@app.route("/game/<category>/<cards>")
+def game(category, cards):
+	return "Output: " + category + cards
+
 @app.route("/test/<firstname>/<surname>")
 def test(firstname, surname):
 	return "Name:" + firstname + surname
