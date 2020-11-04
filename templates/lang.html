@@ -11,9 +11,66 @@
 <section id="team" class="pb-5">
     <div class="container">
         <h5 class="section-title h1">FlaskCards</h5>
-	<h6 class="section-subtitle h4"> {{ languageid }} / {{gamemode}}  </h6>
+	<h6 class="section-subtitle h4">{{ languageid }} | {{ gamemode }}</h6>
         <div class="row">
+		<div class="col">
+		Category
+		</div>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary btn-lg">
+                        <input type="radio" name="options" id="option1"> Random </label>
+                       <!-- <label class="btn btn-secondary btn-lg active">
+                        <input type="radio" name="options" id="option2" checked> Foods </label>-->
+		 	<label class="btn btn-secondary btn-lg">
+                        <input type="radio" name="options" id="option2"> Foods </label>
+                        <label class="btn btn-secondary btn-lg">
+                        <input type="radio" name="options" id="option3"> Numbers </label>
+                </div>
+		<div class="col">
+		<!--padding-->
+		</div>
         </div>
+	<br>
+	 <div class="row">
+                <div class="col">
+                Number of cards
+                </div>
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+			<label class="btn btn-secondary btn-lg">
+			<input type="radio" name="options" id="option1"> 1 </label>
+			<label class="btn btn-secondary btn-lg">
+			<input type="radio" name="options" id="option2"> 2 </label>
+			<label class="btn btn-secondary btn-lg active">
+			<input type="radio" name="options" id="option3" checked> 3 </label>
+                        <label class="btn btn-secondary btn-lg">
+                        <input type="radio" name="options" id="option2"> 4 </label>
+                        <label class="btn btn-secondary btn-lg">
+                        <input type="radio" name="options" id="option3"> 5 </label>
+                        <label class="btn btn-secondary btn-lg">
+                        <input type="radio" name="options" id="option2"> 6 </label>
+                        <label class="btn btn-secondary btn-lg">
+                        <input type="radio" name="options" id="option3"> 7 </label>
+                        <label class="btn btn-secondary btn-lg">
+                        <input type="radio" name="options" id="option2"> 8 </label>
+                        <label class="btn btn-secondary btn-lg">
+                        <input type="radio" name="options" id="option3"> 9 </label>
+
+		</div>		
+                <div class="col">
+                <!--padding-->
+                </div>
+        </div>
+	<br>
+	<div class="row">
+		<div class="col">
+		</div>
+		<div class="col text-center">
+		<button type="button" class="btn btn-secondary btn-lg">Start!</button>
+		</div>
+		<div class="col">
+		</div>
+	</div>
+
     </div>
 </section>
 <!-- Team -->
