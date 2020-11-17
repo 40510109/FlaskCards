@@ -1,0 +1,61 @@
+<html>
+<head>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="../../static/css/bootsnipp.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<title>FlaskCards</title>
+</head>
+
+<body>
+<!-- Team -->
+<section id="team" class="pb-5">
+    <div class="container h-100">
+        <h5 class="section-title h1">FlaskCards</h5>
+        <h6 class="section-subtitle h4">{{ cat }} {{ diff }}</h6>
+        <div class="row justify-content-center">
+		<div class="col">
+		<div class="card border-dark mb-3" style="max-width: 10rem;">
+ 			<!--<div class="card-header">Question Card</div>-->
+			<div class="card-body text-dark">
+			<h5 class="card-title text-center">{{ cat }}</h5>
+			</div>
+		</div>
+		</div>
+	<div class="col">
+		<div class="card-deck">
+	  		<div class="card border-dark mb-3">
+				<div class="card-body text-dark">
+				<h5 class="card-title text-center">Card title</h5>
+				<!--<p class="card-text">This is a longer card with supporting text longer.</p>-->
+	   			</div>
+  			</div>
+  			<div class="card border-dark mb-3">
+			    	<div class="card-body text-dark">
+			      	<h5 class="card-title text-center">Card title</h5>
+			      	<!--<p class="card-text">This card has supporting text additional content.</p>-->
+			    	</div>
+		  	</div>
+		  	<div class="card border-dark mb-3">
+		    	<div class="card-body text-dark">
+		      	<h5 class="card-title text-center">Card title</h5>
+		      	<!--<p class="card-text">This is a wider card content.</p>-->
+		    	</div>
+	  	</div>
+	</div>
+        <br>
+    </div>
+
+	</div>
+        <br>
+        <div class="row justify-content-center">
+                <a href="../.." class="btn btn-outline-secondary btn-lg"> Home </a>
+        </div>
+
+</div>
+</section>
+</body>
+</html>

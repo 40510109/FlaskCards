@@ -45,8 +45,8 @@ section .section-subtitle {
 
 
 #team .card {
-    border: none;
-    background: #ffffff;
+ /*   border: none; */
+    background: #ffffff; 
 }
 
 .image-flip:hover .backside,

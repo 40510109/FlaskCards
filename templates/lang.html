@@ -1,30 +1,34 @@
 <html>
 <head>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="../../static/css/bootsnipp.css" rel="stylesheet">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<title>FlaskCards</title>
 </head>
 
 <body>
 <!-- Team -->
 <section id="team" class="pb-5">
+<h5 class="section-title h1">FlaskCards</h5>
+<h6 class="section-subtitle h4">{{ languageid }} {{ gamemode }}</h6>
     <div class="container h-100">
-        <h5 class="section-title h1">FlaskCards</h5>
-	<h6 class="section-subtitle h4">{{ languageid }} {{ gamemode }}</h6>
         <div class="row justify-content-center">
-	<div>	
+	<div>
 	<div class="btn-group btn-group-toggle" data-toggle="buttons">
   		<label class="btn btn-secondary btn-lg disabled">
 	    	<input type="radio" name="optionscat" id="option0" autocomplete="off"> Category: </label>
   		<label class="btn btn-secondary btn-lg">
-	    	<input type="radio" name="optionscat" id="option1" autocomplete="off"> Random </label>
+	    	<input type="radio" name="optionscat" id="option1" value="random" autocomplete="off"> Random </label>
 	  	<label class="btn btn-secondary btn-lg">
-        	<input type="radio" name="optionscat" id="option2" autocomplete="off"> Basics </label>
+        	<input type="radio" name="optionscat" id="option2" value="basics" autocomplete="off"> Basics </label>
  		<label class="btn btn-secondary btn-lg">
-	   	<input type="radio" name="optionscat" id="option3" autocomplete="off"> Numbers </label>
+	   	<input type="radio" name="optionscat" id="option3" value="numbers" autocomplete="off"> Numbers </label>
                 <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="optionscat" id="option4" autocomplete="off"> Foods </label>
+                <input type="radio" name="optionscat" id="option4" value="food" autocomplete="off"> Foods </label>
 	</div>
 	</div>
         </div>
@@ -32,23 +36,13 @@
 	<div class="row justify-content-center">
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary btn-lg disabled">
-                <input type="radio" name="options" id="option0" autocomplete="off"> Cards: </label>
+                <input type="radio" name="options" id="option0" autocomplete="off"> Difficulty: </label>
                 <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="options" id="option2" autocomplete="off"> 2 </label>
+                <input type="radio" name="options" id="option2" value="easy" autocomplete="off"> Easy </label>
                 <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="options" id="option3" autocomplete="off"> 3 </label>
+                <input type="radio" name="options" id="option3" value="med" autocomplete="off"> Medium </label>
                 <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="options" id="option4" autocomplete="off"> 4 </label>
-                <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="options" id="option5" autocomplete="off"> 5 </label>
-                <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="options" id="option6" autocomplete="off"> 6 </label>
-                <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="options" id="option7" autocomplete="off"> 7 </label>
-                <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="options" id="option8" autocomplete="off"> 8 </label>
-                <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="options" id="option9" autocomplete="off"> 9 </label>
+                <input type="radio" name="options" id="option4" value="hard" autocomplete="off"> Hard </label>
         </div>
         </div>
 	<br>
@@ -57,19 +51,38 @@
                 <label class="btn btn-secondary btn-lg disabled">
                 <input type="radio" name="optionmode" id="option0" autocomplete="off"> Mode: </label>
                 <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="optionmode" id="option1" autocomplete="off"> Text </label>
+                <input type="radio" name="optionmode" id="option1" value="text"  autocomplete="off"> Text </label>
                 <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="optionmode" id="option2" autocomplete="off"> Image </label>
-                <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="optionmode" id="option3" autocomplete="off"> Random </label>
+                <input type="radio" name="optionmode" id="option2" value="image" autocomplete="off"> Image </label>
+		<!--<label class="btn btn-secondary btn-lg">
+                <input type="radio" name="optionmode" id="option3" value="randommode" autocomplete="off"> Random </label>-->
         </div>
 	</div>
 	<br>
 	<div class="row justify-content-center">
-		<a href="http://google.co.uk" class="btn btn-outline-secondary btn-lg"> Start! </a>
+		<a href="#" onclick="getValues()" class="btn btn-outline-secondary btn-lg"> Get Started! </a>
+	</div>
+	<br>
+	<div class="row justify-content-center">
+		<a href="../.." class="btn btn-outline-secondary btn-lg"> Back </a>
 	</div>
     </div>
 </section>
 <!-- Team -->
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+
+<script>
+function getValues() {
+var selectedMode = $("input:radio[name=optionmode]:checked").val()
+var selectedDifficulty = $("input:radio[name=options]:checked").val()
+var selectedCategory = $("input:radio[name=optionscat]:checked").val()
+var url = "/game/" + selectedCategory +"/"+selectedDifficulty
+window.location = url
+//alert(" Mode: "+ selectedCategory + selectedDifficulty + selectedMode );
+
+}
+</script>
 </body>
 </html>
