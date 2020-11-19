@@ -14,7 +14,7 @@
 <!-- Team -->
 <section id="team" class="pb-5">
 <h5 class="section-title h1">FlaskCards</h5>
-<h6 class="section-subtitle h4">{{ languageid }} {{ gamemode }}</h6>
+<h6 class="section-subtitle h4">{{ languageid }}</h6>
     <div class="container h-100">
         <div class="row justify-content-center">
 	<div>
@@ -38,11 +38,11 @@
                 <label class="btn btn-secondary btn-lg disabled">
                 <input type="radio" name="options" id="option0" autocomplete="off"> Difficulty: </label>
                 <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="options" id="option2" value="easy" autocomplete="off"> Easy </label>
+                <input type="radio" name="options" id="option2" value="2" autocomplete="off"> Easy </label>
                 <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="options" id="option3" value="med" autocomplete="off"> Medium </label>
+                <input type="radio" name="options" id="option3" value="5" autocomplete="off"> Medium </label>
                 <label class="btn btn-secondary btn-lg">
-                <input type="radio" name="options" id="option4" value="hard" autocomplete="off"> Hard </label>
+                <input type="radio" name="options" id="option4" value="8" autocomplete="off"> Hard </label>
         </div>
         </div>
 	<br>
@@ -75,12 +75,13 @@
 
 <script>
 function getValues() {
+var lang = "{{ languageid }}"
 var selectedMode = $("input:radio[name=optionmode]:checked").val()
 var selectedDifficulty = $("input:radio[name=options]:checked").val()
 var selectedCategory = $("input:radio[name=optionscat]:checked").val()
-var url = "/game/" + selectedCategory +"/"+selectedDifficulty
+var url = "/language/" + lang + "/" + selectedCategory +"/"+selectedDifficulty
 window.location = url
-//alert(" Mode: "+ selectedCategory + selectedDifficulty + selectedMode );
+//alert(url);
 
 }
 </script>

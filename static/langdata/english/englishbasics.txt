@@ -1,0 +1,9 @@
+hello
+car
+bus
+train
+school bus
+kid
+kids
+man
+woman

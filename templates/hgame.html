@@ -3,7 +3,7 @@
 <head>
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link href="../../static/css/bootsnipp.css" rel="stylesheet">
+  <link href="../../../static/css/bootsnipp.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -15,14 +15,14 @@
   <section id="team" class="pb-5">
     <div class="container h-100">
       <h5 class="section-title h1">FlaskCards</h5>
-      <h6 class="section-subtitle h4">{{ cat }} {{ diff }}</h6>
+      <h6 class="section-subtitle h4">{{ langid | capitalize }} | {{ cat | capitalize }}</h6>
       <div class="row justify-content-center">
         <div class="col">
           <div class="card border-dark mb-3" style="max-width: 10rem;">
             <!--<div class="card-header">Question Card</div>-->
             <div class="card-body text-dark">
-              <h5 class="card-title text-center">{{ cat|capitalize }}</h5>
-	      <p class="card-text text-center">Question#1</p>
+              <h5 class="card-title text-center">{{ qCard | capitalize }}</h5>
+<!--	      <p class="card-text text-center"> {{ qCard }}</p>-->
             </div>
           </div>
         </div>
@@ -31,19 +31,19 @@
             <div class="card border-dark mb-3">
               <div class="card-body text-dark">
                 <h5 class="card-title text-center"></h5>
-                <p class="card-text text-center h5">Answer#1</p>
+		<p class="card-text text-center h5" onclick="checkCard(this.textContent);">{{ rSample[0] }}</p>
               </div>
             </div>
             <div class="card border-dark mb-3">
               <div class="card-body text-dark">
                 <h5 class="card-title text-center"></h5>
-                <p class="card-text text-center h5">Answer#2</p>
+		<p class="card-text text-center h5" onclick="checkCard(this.textContent);">{{ rSample[1] }}</p>
               </div>
             </div>
             <div class="card border-dark mb-3">
               <div class="card-body text-dark">
                 <h5 class="card-title text-center"></h5>
-                <p class="card-text text-center h5">Answer#3</p>
+		<p class="card-text text-center h5" onclick="checkCard(this.textContent);">{{ rSample[2] }}</p>
               </div>
             </div>
           </div><br>
@@ -56,19 +56,19 @@
             <div class="card border-dark mb-3">
               <div class="card-body text-dark">
                 <h5 class="card-title text-center"></h5>
-                <p class="card-text text-center h5">Answer#4</p>
+		<p class="card-text text-center h5" onclick="checkCard(this.textContent);">{{ rSample[3] }}</p>
               </div>
             </div>
             <div class="card border-dark mb-3">
               <div class="card-body text-dark">
                 <h5 class="card-title text-center"></h5>
-                <p class="card-text text-center h5">Answer#5</p>
+		<p class="card-text text-center h5" onclick="checkCard(this.textContent);">{{ rSample[4] }}</p>
               </div>
             </div>
             <div class="card border-dark mb-3">
               <div class="card-body text-dark">
                 <h5 class="card-title text-center"></h5>
-                <p class="card-text text-center h5">Answer#6</p>
+		<p class="card-text text-center h5" onclick="checkCard(this.textContent);">{{ rSample[5] }}</p>
               </div>
             </div>
           </div><br>
@@ -83,19 +83,19 @@
             <div class="card border-dark mb-3">
               <div class="card-body text-dark">
                 <h5 class="card-title text-center"></h5>
-                <p class="card-text text-center h5">Answer#7</p>
+                <p class="card-text text-center h5" onclick="checkCard(this.textContent);">{{ rSample[6] }}</p>
               </div>
             </div>
             <div class="card border-dark mb-3">
               <div class="card-body text-dark">
                 <h5 class="card-title text-center"></h5>
-                <p class="card-text text-center h5">Answer#8</p>
+		<p class="card-text text-center h5" onclick="checkCard(this.textContent);">{{ rSample[7] }}</p>
               </div>
             </div>
             <div class="card border-dark mb-3">
               <div class="card-body text-dark">
                 <h5 class="card-title text-center"></h5>
-                <p class="card-text text-center h5">Answer#9</p>
+		<p class="card-text text-center h5" onclick="checkCard(this.textContent);">{{ rSample[8] }}</p>
               </div>
             </div>
           </div><br>
@@ -103,10 +103,29 @@
       </div><br>
       </div>
       <div class="row justify-content-center">
-        <a href="../.." class=
+        <a href="../../.." class=
         "btn btn-outline-secondary btn-lg">Home</a>
       </div>
     </div>
   </section>
+   <script>
+
+function nextQ() {
+alert("test")
+}
+
+function checkCard(v) {
+var answer = "{{ aCard }}";
+if (v === answer ) {
+
+alert("Correct!");
+location.reload();
+} else {
+alert("Wrong!");
+location.reload();
+}
+}
+</script>
+
 </body>
 </html>

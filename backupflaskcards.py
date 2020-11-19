@@ -23,6 +23,7 @@ def delete_visits():
 
 
 
+
 @app.route('/')
 def root():
 	return render_template('home.html'), 200
@@ -31,46 +32,56 @@ def root():
 def language(langid):
 	return render_template('lang.html', languageid=langid), 200
 
-#ENGLISH = ["hello", "car", "bus", "train", "school bus", "kid", "kids", "man", "woman"]
-#GERMAN = ["hallo", "das auto", "der bus", "der zug", "der schulbus", "das kind", "die kinder", "der mann", "die frau"]
-#FRENCH = ["bonjour", "le car", "le autobus", "le train", "bus scolaire", "des gamins", "homme", "femme"]
-#SPANISH = []
+ENGLISH = ["hello", "car", "bus", "train", "school bus", "kid", "kids", "man", "woman"]
+GERMAN = ["hallo", "das auto", "der bus", "der zug", "der schulbus", "das kind", "die kinder", "der mann", "die frau"]
+FRENCH = ["bonjour", "le car", "le autobus", "le train", "bus scolaire", "des gamins", "homme", "femme"]
+SPANISH = []
 
 @app.route("/language/<langid>/<category>/<diff>")
 def egame(langid, category, diff):
 	with open("static/langdata/" + langid + "/" + langid + category + ".txt") as file:
 		dict = [line.rstrip() for line in file]
-	with open("static/langdata/english/english" + category + ".txt") as qfile:
-		ENGLISH = [line.rstrip() for line in qfile]
-	rIndex=randrange(len(ENGLISH))
-	qCard=ENGLISH[rIndex]
-	aCard=dict[rIndex]
+	#if langid == 'german':
+	#	dict = GERMAN
+	#elif langid == 'french':
+	#	dict = FRENCH
+	random_index=randrange(len(ENGLISH))
+	random_index1=randrange(len(dict))
+	random_index2=randrange(len(dict))
+	rand1=ENGLISH[random_index]
+	rand2=dict[random_index]
 	if diff == "2":
-	        rSample=random.sample(list(dict),2)
-	        rSample.append(aCard)
-	        random.shuffle(rSample)
-	        return render_template('egame.html', langid=langid, cat=category, qCard=qCard, aCard=aCard, rSample=rSample), 200
+	        rand3=random.sample(list(dict),2)
+	        rand3.append(rand2)
+	        random.shuffle(rand3)
+	        return render_template('egame.html', langid=langid, cat=category, rand1=rand1, rand2=rand2, rand3=rand3), 200
 	elif diff == "5":
-	        rSample=random.sample(list(dict),5)
-	        rSample.append(aCard)
-	        random.shuffle(rSample)
-	        return render_template('mgame.html', langid=langid, cat=category, qCard=qCard, aCard=aCard, rSample=rSample), 200
+	        rand3=random.sample(list(dict),5)
+	        rand3.append(rand2)
+	        random.shuffle(rand3)
+	        return render_template('mgame.html', langid=langid, cat=category, rand1=rand1, rand2=rand2, rand3=rand3), 200
 	elif diff == "8":
-                rSample=random.sample(list(dict),8)
-                rSample.append(aCard)
-                random.shuffle(rSample)
-                return render_template('hgame.html', langid=langid, cat=category, qCard=qCard, aCard=aCard, rSample=rSample), 200
-        #app.logger.info('\n Logging Start \n random_index=' + random_index1 + '\n random_index2=' + random_index2)
+                rand3=random.sample(list(dict),8)
+                rand3.append(rand2)
+                random.shuffle(rand3)
+                return render_template('hgame.html', langid=langid, cat=category, rand1=rand1, rand2=rand2, rand3=rand3), 200
 	#app.logger.info('random_index:' + str(random_index))
 	#app.logger.info('random_index1:' + str(random_index1))
 	#app.logger.info('random_index2:' + str(random_index2))
-	#app.logger.info('qCard:' + str(qCard))
-	#app.logger.info('aCard:' + str(aCard))
-	#app.logger.info('rSample:' + str(rSample))
+	#app.logger.info('rand1:' + str(rand1))
+	#app.logger.info('rand2:' + str(rand2))
+	#app.logger.info('rand3:' + str(rand3))
 	#app.logger.info('langid:'+ str(langid))
 	#app.logger.info('eng len:' + str(len(ENGLISH)))
 	#app.logger.info('ger len:' + str(len(GERMAN)))
 	#app.logger.info('type: langid:' + str(type(langid)))
+
+@app.route("/labs/")
+def filetest():
+	my_file = open("static/langdata/germantest.txt", "r")
+	content_list = my_file.readlines()
+	return str(content_list)
+
 
 @app.route("/test/<firstname>/<surname>")
 def test(firstname, surname):
