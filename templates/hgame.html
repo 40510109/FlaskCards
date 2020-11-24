@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style type="text/css">body { background: #eeeeee !important; }</style>
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="../../../static/css/bootsnipp.css" rel="stylesheet">
@@ -11,7 +12,6 @@
   <title>FlaskCards</title>
 </head>
 <body>
-  <!-- Team -->
   <section id="team" class="pb-5">
     <div class="container h-100">
       <h5 class="section-title h1">FlaskCards</h5>
@@ -19,10 +19,8 @@
       <div class="row justify-content-center">
         <div class="col">
           <div class="card border-dark mb-3" style="max-width: 10rem;">
-            <!--<div class="card-header">Question Card</div>-->
             <div class="card-body text-dark">
               <h5 class="card-title text-center">{{ qCard | capitalize }}</h5>
-<!--	      <p class="card-text text-center"> {{ qCard }}</p>-->
             </div>
           </div>
         </div>
@@ -109,20 +107,16 @@
     </div>
   </section>
    <script>
-
-function nextQ() {
-alert("test")
-}
-
 function checkCard(v) {
-var answer = "{{ aCard }}";
-if (v === answer ) {
 
-alert("Correct!");
-location.reload();
+var answer = "{{ aCard }}";
+
+if (v === answer ) {
+	alert("Correct!");
+	location.reload();
 } else {
-alert("Wrong!");
-location.reload();
+	alert("Wrong! The correct answer is {{ aCard }}");
+	location.reload();
 }
 }
 </script>

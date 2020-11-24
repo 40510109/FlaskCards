@@ -1,9 +1,30 @@
 hallo
-das auto
-der bus
-der zug
-der schulbus
-das kind
-die kinder
-der mann
-die frau
+wagen
+bus
+zug
+schulbus
+kind
+kinder
+mann
+frau
+zeit
+person
+jahr
+weg
+tag
+ding
+welt
+leben
+hand
+teil
+auge
+ort
+arbeit
+woche
+fall
+punkt
+regierung
+unternehmen
+nummer
+gruppe
+problem

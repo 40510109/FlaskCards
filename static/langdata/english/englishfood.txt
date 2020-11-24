@@ -1,0 +1,37 @@
+Apple
+Pear
+Banana
+Orange
+Lemon
+Peach
+Plum
+Grape
+Strawberry
+Raspberry
+Cherry
+Chocolate
+Cake
+Cookie
+Ice cream
+Sugar
+Raisins
+Carrot
+Onion
+Peas
+Beans
+Leek
+Meat
+Beef
+Pork
+Veal
+Poultry
+Fish
+Chicken
+Lamb
+Bacon
+White bread
+Butter
+Margarine
+Yoghurt
+Honey
+Egg
