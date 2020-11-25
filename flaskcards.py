@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, flash, session
+from flask import Flask, render_template, url_for, flash, session, make_response, request
 from random import randrange
 from markupsafe import escape
 import random
@@ -8,12 +8,12 @@ app =  Flask(__name__)
 app.secret_key = 'bZ_5#y2ddQ8sSs2z\n\c]/'
 
 
-@app.route('/visits-counter/')
+@app.route('/increment/')
 def visits():
     if 'user' in session:
-        session['user'] = session.get('user')  # reading and updating session data
+        session['user'] = session.get('user') +1  # reading and updating session data
     else:
-        session['user'] = 'marc' # setting session data
+        session['user'] = '0' # setting session data
     return "Welcome back {}".format(session.get('user'))
 
 @app.route('/delete-visits/')
@@ -21,7 +21,15 @@ def delete_visits():
     session.pop('user', None) # delete visits
     return 'Visits deleted'
 
-
+@app.route('/cookie/')
+def cookie():
+    score=0
+    if not request.cookies.get('score'):
+        res = make_response("Setting a cookie")
+        res.set_cookie('score', score, max_age=60*60*24*365*2)
+    else:
+        res = make_response("Score: {}".format(request.cookies.get('score')))
+    return res
 
 @app.route('/')
 def root():
@@ -30,11 +38,6 @@ def root():
 @app.route("/language/<langid>/")
 def language(langid):
 	return render_template('lang.html', languageid=langid), 200
-
-#ENGLISH = ["hello", "car", "bus", "train", "school bus", "kid", "kids", "man", "woman"]
-#GERMAN = ["hallo", "das auto", "der bus", "der zug", "der schulbus", "das kind", "die kinder", "der mann", "die frau"]
-#FRENCH = ["bonjour", "le car", "le autobus", "le train", "bus scolaire", "des gamins", "homme", "femme"]
-#SPANISH = []
 
 @app.route("/language/<langid>/<category>/<diff>")
 def egame(langid, category, diff):
