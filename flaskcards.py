@@ -4,33 +4,6 @@ from markupsafe import escape
 import random
 app =  Flask(__name__)
 
-#secret_key
-app.secret_key = 'bZ_5#y2ddQ8sSs2z\n\c]/'
-
-
-@app.route('/increment/')
-def visits():
-    if 'user' in session:
-        session['user'] = session.get('user') +1  # reading and updating session data
-    else:
-        session['user'] = '0' # setting session data
-    return "Welcome back {}".format(session.get('user'))
-
-@app.route('/delete-visits/')
-def delete_visits():
-    session.pop('user', None) # delete visits
-    return 'Visits deleted'
-
-@app.route('/cookie/')
-def cookie():
-    score=0
-    if not request.cookies.get('score'):
-        res = make_response("Setting a cookie")
-        res.set_cookie('score', score, max_age=60*60*24*365*2)
-    else:
-        res = make_response("Score: {}".format(request.cookies.get('score')))
-    return res
-
 @app.route('/')
 def root():
 	return render_template('home.html'), 200
