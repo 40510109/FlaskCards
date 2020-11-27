@@ -32,6 +32,12 @@
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">Learn German</h4>
                                     <p class="card-text">There are an estimated 220 million German speakers around the world, why not make it 220,000,001?</p>
+                                    <p id="langprogress">Current Score: 0</p>
+                                    <script>
+				    if(localStorage.getItem("germanscore")) {
+				    document.getElementById("langprogress").innerHTML = "Current Score: " + localStorage.getItem("germanscore");
+				    }
+				    </script>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
 						<a href="/language/german" class="btn btn-secondary btn-sm"> Start! </a>
@@ -62,6 +68,12 @@
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">Learn French</h4>
                                     <p class="card-text">There are an estimated 300 million French speakers around the world, why not make it 300,000,001?</p>
+                                     <p id="langprogress1">Current Score: 0</p>
+                                    <script>
+                                    if(localStorage.getItem("frenchscore")) {
+                                    document.getElementById("langprogress1").innerHTML = "Current Score: " + localStorage.getItem("frenchscore");
+                                    }
+                                    </script>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
 					<a href="/language/french" class="btn btn-secondary btn-sm"> Start! </a>
@@ -91,6 +103,12 @@
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">Learn Spanish</h4>
                                     <p class="card-text">There are an estimated 572 million Spanish speakers around the world, why not make it 572,000,001?</p>
+                                     <p id="langprogress2">Current Score: 0</p>
+                                    <script>
+                                    if(localStorage.getItem("spanishscore")) {
+                                    document.getElementById("langprogress2").innerHTML = "Current Score: " + localStorage.getItem("spanishscore");
+                                    }
+                                    </script>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
  					<a href="/language/spanish" class="btn btn-secondary btn-sm"> Start! </a>
