@@ -101,23 +101,37 @@
       </div><br>
       </div>
       <div class="row justify-content-center">
-        <a href="../../.." class=
-        "btn btn-outline-secondary btn-lg">Home</a>
+        <a href="../../.." class="btn btn-outline-secondary btn-lg">Home</a>
+        <a class="btn btn-outline-secondary btn-lg" id="record">Score: 0</a>
+        <script>
+        if(sessionStorage.getItem("{{langid}}score")) {
+        score=sessionStorage.getItem("{{langid}}score")
+        document.getElementById("record").innerHTML = "Score: " + sessionStorage.getItem("{{langid}}score");
+        }
+        </script>
       </div>
     </div>
   </section>
    <script>
-function checkCard(v) {
+score=sessionStorage.getItem("{{langid}}score")
 
+function checkCard(v) {
 var answer = "{{ aCard }}";
 
 if (v === answer ) {
-	alert("Correct!");
-	location.reload();
+        score++;
+        alert("Correct!");
+        document.getElementById("record").innerHTML = "Score: " + sessionStorage.getItem("{{langid}}score");
+        location.reload();
+
+
 } else {
-	alert("Wrong! The correct answer is {{ aCard }}");
-	location.reload();
+        score--;
+        alert("Wrong! The correct answer is {{ aCard }} ");
+        document.getElementById("record").innerHTML = "Score: " + sessionStorage.getItem("{{langid}}score");
+        location.reload();
 }
+        sessionStorage.setItem("{{langid}}score", score);
 }
 </script>
 
