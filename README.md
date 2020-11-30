@@ -14,7 +14,7 @@ sudo apt install virtualenv
 
 
 ```bash
-virutalenv flaskcards
+virtualenv flaskcards
 ```
 
 ## Activate Virtualenv
